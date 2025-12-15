@@ -1,0 +1,67 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block style %}
+<link rel='stylesheet' href="{% static 'app/css/students.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="cricket-icon icon-1">🏏</div>
+<div class="cricket-icon icon-2">⚾</div>
+<div class="cricket-icon icon-3">🏆</div>
+<div class="cricket-icon icon-4">🎯</div>
+
+<!-- Main Container -->
+<div class="container">
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Our Students</h1>
+        <p>Champions in Training</p>
+    </div>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" placeholder="Search students by name...">
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Game Type</th>
+                    <th>Fee Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stu in students %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'student_detail' stu.id %}" class="stu-link">
+                                {{stu.name}}
+                            </a>
+                        </td>
+                        <td>{{stu.age}}</td>
+                        <td>{{stu.mobile}}</td>
+                        <td>{{stu.address}}</td>
+                        <td><span class="badge badge-batsman">{{stu.game_type}}</span></td>
+                        <td>
+                            {% if stu.paid %}
+                                <span class="badge badge-paid" style='background:green'>✓ Paid</span>
+                            {% else %}
+                                <span class="badge badge-unpaid" style='background:red'>✗ Unpaid</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

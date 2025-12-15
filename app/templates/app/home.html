@@ -1,0 +1,235 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block style %}
+<link rel='stylesheet' href="{% static 'app/css/home.css' %}">
+{% endblock style %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+  <section class="hero">
+        <div class="cricket-ball"></div>
+        <div class="hero-content">
+            <h1>Lucky Cricket Academy</h1>
+            <p class="tagline">Build Future Champions</p>
+            <a href="https://wa.me/919921280652?text=Hi%20I%20want%20to%20enquire%20about%20Lucky%20Cricket%20Academy" 
+            class="cta-button" 
+            target="_blank">
+            Enquiry
+            </a>
+
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="about">
+        <h2 class="section-title">About Our Academy</h2>
+        <div class="about-content">
+            <p>Welcome to Lucky Cricket Academy, where passion meets excellence. We are dedicated to nurturing young cricket talent and transforming aspiring players into champions. With state-of-the-art facilities, experienced coaches, and a proven track record, we provide comprehensive training programs that focus on technical skills, fitness, and mental strength. Our academy has produced numerous district and state-level players who continue to excel in their cricket careers.</p>
+            <br><p>लकी क्रिकेट अकॅडमीमध्ये आपले स्वागत आहे.
+इथे क्रिकेटची आवड आणि उत्कृष्टता यांचा संगम घडतो. आम्ही तरुण क्रिकेटपटूंचे कौशल्य विकसित करण्यासाठी आणि त्यांना यशस्वी खेळाडू बनवण्यासाठी कटिबद्ध आहोत.
+
+उत्कृष्ट सुविधा, अनुभवी प्रशिक्षक आणि सिद्ध कामगिरीच्या आधारावर आम्ही तांत्रिक कौशल्य, फिटनेस तसेच मानसिक बळ यावर आधारित सर्वसमावेशक प्रशिक्षण देतो. आमच्या अकॅडमीने जिल्हा व राज्य स्तरावरील अनेक खेळाडू घडवले आहेत, जे आजही त्यांच्या क्रिकेट कारकिर्दीत उत्तम प्रगती करत आहेत.</p>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏏</div>
+                <h3>Professional Coaching</h3>
+                <p>Expert coaches with international experience providing personalized training sessions for all skill levels.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💪</div>
+                <h3>Fitness Training</h3>
+                <p>Specialized fitness programs designed to enhance strength, agility, and endurance for peak performance.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏆</div>
+                <h3>Tournaments</h3>
+                <p>Regular participation in local and national tournaments to gain competitive experience.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⛺</div>
+                <h3>Cricket Camps</h3>
+                <p>Intensive training camps during holidays with focused skill development and match practice.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="trophy-icon">🏆</div>
+                <h2 class="section-title">Coaching Achievements</h2>
+                <p class="section-subtitle">Proud Moments of 2025</p>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="achievements-grid">
+                <!-- Achievement Card 1 -->
+                <div class="achievement-card">
+                    <div class="card-icon">🎯</div>
+                    <div class="card-content">
+                        <h3 class="player-name">वरद पाटील</h3>
+                        <p class="achievement-text">अंडर फोर्टीन सांगली जिल्हा संघात निवड (2025)</p>
+                        <div class="achievement-badge">Under-14</div>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 2 -->
+                <div class="achievement-card">
+                    <div class="card-icon">⭐</div>
+                    <div class="card-content">
+                        <h3 class="player-name">अवधूत सावंत</h3>
+                        <p class="achievement-text">अंडर नाईन्टीन सांगली जिल्हा संघात निवड (2025)</p>
+                        <div class="achievement-badge">Under-19</div>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 3 -->
+                <div class="achievement-card">
+                    <div class="card-icon">🏏</div>
+                    <div class="card-content">
+                        <h3 class="player-name">तेजस पाटील</h3>
+                        <p class="achievement-text">अंडर 19 सांगली जिल्या संघात निवड (2025)</p>
+                        <div class="achievement-badge">Under-19</div>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 4 -->
+                <div class="achievement-card">
+                    <div class="card-icon">🎖️</div>
+                    <div class="card-content">
+                        <h3 class="player-name">नितीन बारपटे</h3>
+                        <p class="achievement-text">ओपन हिंगोली संघात निवड (2025)</p>
+                        <div class="achievement-badge">Open</div>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 5 -->
+                <div class="achievement-card">
+                    <div class="card-icon">💫</div>
+                    <div class="card-content">
+                        <h3 class="player-name">ऋतुजा कुमाळ</h3>
+                        <p class="achievement-text">सांगली जिल्हा संघात निवड (2025)</p>
+                        <div class="achievement-badge women">Women's</div>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 6 -->
+                <div class="achievement-card">
+                    <div class="card-icon">🌟</div>
+                    <div class="card-content">
+                        <h3 class="player-name">रूहान रोनड</h3>
+                        <p class="achievement-text">अंडर सिक्सटीन सातारा संघात निवड (2025)</p>
+                        <div class="achievement-badge">Under-16</div>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 7 -->
+                <div class="achievement-card">
+                    <div class="card-icon">🎓</div>
+                    <div class="card-content">
+                        <h3 class="player-name">यश पाटील</h3>
+                        <p class="achievement-text">कोल्हापूर युनिव्हर्सिटी प्लेयर (2025)</p>
+                        <div class="achievement-badge university">University</div>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 8 -->
+                <div class="achievement-card highlight-card">
+                    <div class="card-icon">🏅</div>
+                    <div class="card-content">
+                        <h3 class="player-name">आदित्य जाधव</h3>
+                        <p class="achievement-text">साउथ झोन अंडर 19 संघात निवड (2025)</p>
+                        <div class="achievement-badge south-zone">South Zone U-19</div>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 9 -->
+                <div class="achievement-card highlight-card">
+                    <div class="card-icon">🏆</div>
+                    <div class="card-content">
+                        <h3 class="player-name">विराट मोहिते</h3>
+                        <p class="achievement-text">MCA इन्व्हिटेशन लीग खेळण्यासाठी पुण्याच्या CDA क्लब संघात निवड (2025-26)</p>
+                        <div class="achievement-badge mca">MCA League</div>
+                    </div>
+                </div>
+
+                <!-- Special Achievement Card -->
+                <div class="achievement-card special-card">
+                    <div class="card-icon">👏</div>
+                    <div class="card-content">
+                        <h3 class="player-name">गायत्री राजू कोळी</h3>
+                        <p class="achievement-text">भारताचा स्टार क्रिकेटर रोहित शर्मा आणि शार्दुल ठाकूर यांचे कोच श्री दिनेश लाड सर यांनी गायत्री हिचा खेळ पाहून विशेष शाब्बासकी देत तिला दत्तक घेण्याची घोषणा केली</p>
+                        <div class="achievement-badge special">Special Recognition</div>
+                    </div>
+                </div>
+            </div>
+
+            {% comment %} <!-- Stats Summary -->
+            <div class="stats-summary">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Players Selected</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2025</div>
+                    <div class="stat-label">Achievement Year</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">District Teams</div>
+                </div>
+            </div> {% endcomment %}
+        </div>
+    </section>
+
+    <!-- Coaches Section -->
+    <section class="coaches">
+        <h2 class="section-title">Meet Our Coach</h2>
+        <div class="coaches-grid">
+            <div class="coach-card">
+                <div class="coach-image">
+                    <img src="{% static 'app/images/datta.jpg' %}" alt=""  width="230q" height="280">
+                </div>
+                <div class="coach-info">
+                    <h3>Dattatray Patil</h3>
+                    <p>Head Coach | 5+ Years Experience</p>
+                    <p>Former District Cricket Player</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2 class="section-title">Our Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="{% static 'app/images/12runnerup.png' %}" alt=""  width="330" height="280"></div>
+            <div class="gallery-item"><img src="{% static 'app/images/gayatri.png' %}" alt=""  width="330" height="280"></div>
+            <div class="gallery-item"><img src="{% static 'app/images/shahu.png' %}" alt=""  width="330" height="280"></div>
+            <div class="gallery-item"><img src="{% static 'app/images/bowler.png' %}" alt=""  width="330" height="280"></div>
+            <div class="gallery-item"><img src="{% static 'app/images/team.png' %}" alt=""  width="330" height="280"></div>
+            <div class="gallery-item"><img src="{% static 'app/images/bestkeeper.png' %}" alt=""  width="330" height="280"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📞 +91 99212 80652</p>
+                <p>📍 Palus</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Lucky Cricket Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+{% endblock content %}

@@ -1,0 +1,70 @@
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: rgba(45, 125, 50, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 2rem;
+    animation: rotateBall 8s linear infinite;
+}
+
+@keyframes rotateBall {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--white);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--light-green);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
