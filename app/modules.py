@@ -353,16 +353,18 @@ def get_cookies():
     cookies = response.cookies.get('connect.sid')
     return cookies
 
-def get_player_id(name):
+def get_player_id(name,teamId,teamName,cookies):
+    slug = get_slug()
+    print(slug)
+    print(name)
     resp = get_team_members(slug,teamId,teamName,cookies)
     results = {}
     for player in resp['pageProps']['members']['data']['members']:
         if name.lower() in player['name'].lower():
-            name = " ".join([i.strip() for i in player['name'].split()])
-            print(name)
-            results[name] = player['player_id']
+            name_ = " ".join([i.strip() for i in player['name'].split()])
+            print(name_)
+            results[name_] = player['player_id']
     return results
-
 
 def extract_cricket_stats(text):
     clean = re.sub(r"<.*?>", "", text)

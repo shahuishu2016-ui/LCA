@@ -3,7 +3,7 @@ from .forms import studentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login,logout,authenticate
 from .models import Student,FeePayment
-from . modules import get_cookies,get_slug,get_profile_matches,extract_cricket_stats
+from . modules import get_cookies,get_slug,get_profile_matches,extract_cricket_stats,get_player_id
 from django.contrib import messages
 from datetime import date
 
@@ -48,6 +48,7 @@ def loginView(req):
 
 @login_required(login_url='login')
 def student_detail(request,id):
+    print(request)
     student = Student.objects.get(pk=id)
     today = date.today()
     paid = FeePayment.objects.filter(
@@ -89,6 +90,11 @@ def student_detail(request,id):
             print('Player id or player name is not saved')
             messages.error(request,'Player id or player name is not saved')
 
+    if request.method == "GET" and 'get_player_id' in request.GET:
+        print(student.name)
+        print(request)
+        pass
+
     if request.method == "POST" and 'add_fee' in request.POST:
         date_ = request.POST.get('paid_on')        
         amount = request.POST.get('amount')   
@@ -112,3 +118,22 @@ def student_detail(request,id):
 def logoutView(req):
     logout(req)
     return redirect('home')
+
+def add_id(request,id):
+    student = Student.objects.get(pk=id)
+    if request.method == 'POST':
+        player = request.POST.get('id_type')
+        player_name = player.split(':')[0].strip()
+        player_id = player.split(':')[1].strip()
+        student.player_id = player_id
+        student.player_name = player_name
+        student.save()
+        return redirect(request.path)
+    team_name = student.team_name
+    team_id = student.team_id
+    cookies = get_cookies()
+    players = get_player_id(student.name.split()[0],team_id,team_name,cookies)
+    keys = list(players.keys())
+    vals = list(players.values())
+    pls = [keys[i] + " : "+ str(vals[i]) for i in range(len(keys))]
+    return render(request,'app/add_id.html',{'available_ids':pls,'show_popup':True,'student':student})
