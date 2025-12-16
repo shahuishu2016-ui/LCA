@@ -962,7 +962,7 @@
 
 /* Popup Body */
 .popup-body {
-    padding: 35px 30px;
+    padding: 15px 15px;
     background: linear-gradient(to bottom, #FFF5E6 0%, #ffffff 100%);
 }
 
@@ -1137,4 +1137,25 @@
 
 .btn-popup-save:disabled:hover {
     transform: none;
+}
+
+
+.fee-input {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 10px 10px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.fee-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+.fee-input::placeholder {
+    color: #a0aec0;
 }
