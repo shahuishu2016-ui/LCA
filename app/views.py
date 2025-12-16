@@ -121,7 +121,10 @@ def logoutView(req):
 
 def add_id(request,id):
     student = Student.objects.get(pk=id)
-    if request.method == 'POST':
+    name = student.name
+    if request.method == 'POST' and 'search_id' in request.POST:
+        name = request.POST.get('action')
+    elif request.method == 'POST':
         player = request.POST.get('id_type')
         player_name = player.split(':')[0].strip()
         player_id = player.split(':')[1].strip()
@@ -132,8 +135,8 @@ def add_id(request,id):
     team_name = student.team_name
     team_id = student.team_id
     cookies = get_cookies()
-    players = get_player_id(student.name.split()[0],team_id,team_name,cookies)
+    players = get_player_id(name.split()[0],team_id,team_name,cookies)
     keys = list(players.keys())
     vals = list(players.values())
     pls = [keys[i] + " : "+ str(vals[i]) for i in range(len(keys))]
-    return render(request,'app/add_id.html',{'available_ids':pls,'show_popup':True,'student':student})
+    return render(request,'app/add_id.html',{'available_ids':pls,'show_popup':True,'student':student,'name':name.split()[0].strip()})
